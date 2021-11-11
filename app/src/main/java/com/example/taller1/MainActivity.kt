@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         multiplicar()
         ordenar()
         llamarVehiculo()
+        ordenarNumeros()
         validarCedula()
     }
 
@@ -71,6 +72,23 @@ class MainActivity : AppCompatActivity() {
         vehiculo.obtenerVehiculo()
     }
 
+    private fun ordenarNumeros(){
+        val numeros= arrayListOf<Int>(43, 29, 94, 86, 3, 95, 84, 27, 21, 10, 94)
+        var aux : Int
+        println("\n\nTaller de ordenar una lista\nArreglo a ordenar: $numeros")
+
+        for (i in numeros.indices) {
+            for (j in numeros.indices) {
+                if (numeros[i] > numeros[j]) {
+                    aux = numeros[i]
+                    numeros[i] = numeros[j]
+                    numeros[j] = aux
+                }
+            }
+        }
+        println("Arreglo ordenado de forma descendente: $numeros")
+    }
+// [34, 32, 29, 28, 24, 22, 21, 20]
     private fun validarCedula(){
         val cedula = arrayListOf<Int>(1,1,0,4,6,4,8,4,9,6)
         var suma = 0
